@@ -3,6 +3,8 @@ package com.instamart.shopping_delivery.models;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 @Data
 @Entity
@@ -20,5 +22,9 @@ public class AppUser {
     Long phoneNumber;
     String userType;
     String status;
+    @OneToMany
+    List<Location> locations;
+    LocalDateTime createdAt;
+    LocalDateTime updatedAt;
 
 }

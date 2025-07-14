@@ -3,6 +3,7 @@ package com.instamart.shopping_delivery.models;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Data
@@ -16,5 +17,7 @@ public class WareHouseItem {
     UUID pid;
     int quantity;
     int discount;
+    LocalDateTime createdAt;
+    LocalDateTime updatedAt;
 
 }

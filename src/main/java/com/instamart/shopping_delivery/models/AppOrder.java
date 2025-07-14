@@ -4,23 +4,23 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.UUID;
 
 @Data
 @Entity
-@Table(name = "Location")
-public class Location {
+@Table(name = "orders")
+public class AppOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     UUID id;
-    String address;
-    String country;
-    String state;
-    String city;
-    int pincode;
-    @OneToMany
-    List<Location> locations;
+    int totalItems;
+    int totalPrice;
+    String status;
+    @ManyToOne
+    AppUser deliveryPartner;
+    @ManyToOne
+    AppUser shopper;
+    String paymentType;
     LocalDateTime createdAt;
     LocalDateTime updatedAt;
 
